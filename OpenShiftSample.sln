@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenShiftSampleApi", "OpenShiftSampleApi\OpenShiftSampleApi.csproj", "{F1463B3A-E821-4105-B4AD-93AF434D614A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F1463B3A-E821-4105-B4AD-93AF434D614A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1463B3A-E821-4105-B4AD-93AF434D614A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1463B3A-E821-4105-B4AD-93AF434D614A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1463B3A-E821-4105-B4AD-93AF434D614A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {69F063B6-C4F5-4A34-B661-933E9EC1CF7E}
+	EndGlobalSection
+EndGlobal
