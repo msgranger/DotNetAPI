@@ -6,9 +6,6 @@ on:
 
 jobs:
   build:
-    defaults:
-          run:
-            working-directory: SampleDotNetApi
     runs-on: windows-latest
 
     steps:
