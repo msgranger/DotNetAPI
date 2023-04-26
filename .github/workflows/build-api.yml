@@ -1,0 +1,42 @@
+name: SampleDotNetApi Build
+
+on:
+  push:
+    branches: master
+
+jobs:
+  build:
+    defaults:
+          run:
+            working-directory: SampleDotNetApi
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1
+
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1
+      with:
+        nuget-version: 'latest'  
+
+    - name: Create Build Directory
+      run: |
+            mkdir _build
+            ls
+      
+    - name: Restore Packages
+      run: nuget restore SampleDotNetApi.sln
+
+    - name: Build Solution
+      run: |
+        msbuild.exe SampleDotNetApi.sln /nologo /nr:false /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=True /p:platform="Any CPU" /p:configuration="Release" /p:PublishUrl="../_build"
+    - name: commit and push
+      run: |
+            git config --global user.name 'Shreelakshmi G'
+            git config --global user.email 'msgranger@users.noreply.github.com'
+            git add -A
+            git commit -m "Automated build on push"
+            git push 
