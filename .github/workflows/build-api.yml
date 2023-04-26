@@ -25,14 +25,13 @@ jobs:
     - name: Create Build Directory
       run: |
             mkdir _build
-            ls
       
     - name: Restore Packages
-      run: nuget restore SampleDotNetApi.sln
+      run: nuget restore OpenShiftSample.sln
 
     - name: Build Solution
       run: |
-        msbuild.exe SampleDotNetApi.sln /nologo /nr:false /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=True /p:platform="Any CPU" /p:configuration="Release" /p:PublishUrl="../_build"
+        msbuild.exe OpenShiftSample.sln /nologo /nr:false /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=True /p:platform="Any CPU" /p:configuration="Release" /p:PublishUrl="../_build"
     - name: commit and push
       run: |
             git config --global user.name 'Shreelakshmi G'
